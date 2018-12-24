@@ -36,7 +36,7 @@ public class Check
 			return 1;
 		
 		// checking topCount
-		if ( Integer.parseInt(topCount) >= 93 )
+		if ( Integer.parseInt(topCount) >= 93 && Integer.parseInt(topCount) > 0 )
 			return 2;
 		
 		// checking code

@@ -12,6 +12,7 @@ public class Gets
 	public String sayTable(@PathParam("table") String table, @PathParam("code") String code, @PathParam("topCount") String topCount)
 	{
 		String answer = new String (Search.LookFor(table, code, topCount));
+		
 		return answer;
 	}
 	
