@@ -1,5 +1,6 @@
 package HelpfulClasses;
 
+import MandUNM.MarshellerAndUnmarsheller;
 import Rest.ClientNBP;
 import XMLClasses.Informations;
 import XMLClasses.Rates;
@@ -30,16 +31,16 @@ public class Manager
 			if ( answer.getMidMean() > 0 )
 				informations.setMeanMid(Double.toString(answer.getMidMean()));
 			else
-				informations.setMeanMid("Mid's mean not found");
+				informations.setMeanMid("No informations");
 			if ( answer.getAskMean() > 0 )
 				informations.setMeanAsk(Double.toString(answer.getAskMean()));
 			else
-				informations.setMeanAsk("Ask's mean not found");
+				informations.setMeanAsk("No informations");
 			if ( answer.getBidMean() > 0 )
 				informations.setMeanBid(Double.toString(answer.getBidMean()));
 			else
-				informations.setMeanBid("Bid's mean not found");
-			return null;
+				informations.setMeanBid("No informations");
+			return MarshellerAndUnmarsheller.Marshall(informations);
 			
 		}
 		else

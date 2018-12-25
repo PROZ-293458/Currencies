@@ -1,11 +1,13 @@
 package MandUNM;
 
+import java.io.File;
+import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.io.StringReader;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
-import javax.xml.transform.Result;
 
 import XMLClasses.Informations;
 import XMLClasses.Rate;
@@ -33,13 +35,21 @@ public class MarshellerAndUnmarsheller
 	
 	public static String Marshall( Informations informations)
 	{
-			String answer = new String();
+		
+		try
+		{
+			ObjectOutputStream os = new ObjectOutputStream();
 		    JAXBContext jContext = JAXBContext.newInstance(Informations.class);
 		    Marshaller marshallObj = jContext.createMarshaller();
-		    //setting the property to show xml format output
-		    marshallObj.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-		    //calling the marshall method
-		    //marshallObj.mars
-		    return null;
+		    return "Null";
+		    /*marshallObj.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+		    marshallObj.marshal(informations, os);
+		    return os.toString();*/
+		}
+		catch ( Exception e)
+		{
+			e.printStackTrace();
+		}
+		return null;
 	}
 }
