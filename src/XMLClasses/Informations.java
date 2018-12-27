@@ -2,8 +2,10 @@ package XMLClasses;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+//import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement ( name = "Information")
+//@XmlType(propOrder = { "Name", "Code", "Table", "Dates", "MeanMid", "MeanBid", "MeanAsk"})
 public class Informations 
 {
 	private String Name;

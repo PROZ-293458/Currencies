@@ -14,11 +14,11 @@ public class Manager
 		switch (check)
 		{
 		case 1:
-			return "Pick the right table! Tables can be: A, B, C.";
+			return "<?xml version=\"1.0\"?>" + "<info>Pick the right table! Tables can be: A, B, C.</info>";
 		case 2:
-			return "Pick the right number of last currency rates! Number must be less then 94.";
+			return "<?xml version=\"1.0\"?>" + "<info>Pick the right number of last currency rates! Number must be less then 94.</info>";
 		case 3:
-			return "Pick the right code of currency!";
+			return "<?xml version=\"1.0\"?>" + "<info>Pick the right code of currency!</info>";
 		}
 		answer = ClientNBP.Answer(table, code, topCount);
 		if ( answer != null )
@@ -45,7 +45,7 @@ public class Manager
 		}
 		else
 		{
-			return "Cannot get answer from NBP.";
+			return "<?xml version=\"1.0\"?>" + "<info>Cannot get answer from NBP.</info>";
 		}
 	}
 }

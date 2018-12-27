@@ -1,9 +1,9 @@
 package MandUNM;
 
 import java.io.File;
-import java.io.ObjectOutputStream;
-import java.io.PrintWriter;
 import java.io.StringReader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
@@ -38,18 +38,25 @@ public class MarshellerAndUnmarsheller
 		
 		try
 		{
-			ObjectOutputStream os = new ObjectOutputStream();
+			File file = new File ("informations.txt");
 		    JAXBContext jContext = JAXBContext.newInstance(Informations.class);
 		    Marshaller marshallObj = jContext.createMarshaller();
-		    return "Null";
-		    /*marshallObj.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-		    marshallObj.marshal(informations, os);
-		    return os.toString();*/
+		    marshallObj.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+		    marshallObj.marshal(informations, file);
+		    if ( file.exists() )
+		    {
+		    	String content = new String ( Files.readAllBytes( Paths.get("informations.txt") ) );
+			    file.delete();
+			    return content;
+		    }
+		    else
+		    	return "<?xml version=\"1.0\"?>" + "<info>Some Errors with getting informations.</info>";
+		    
 		}
 		catch ( Exception e)
 		{
 			e.printStackTrace();
 		}
-		return null;
+		return "<?xml version=\"1.0\"?>" + "<info>Error with packing informations.</info>";
 	}
 }

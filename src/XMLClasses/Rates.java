@@ -82,6 +82,9 @@ public class Rates
 			mean+= x.getMid();
 		}
 		mean /= rates.size();
+		mean *= 100;
+		mean = Math.round(mean);
+		mean /= 100.0;
 		if ( mean > 0)
 			return mean;
 		else
@@ -96,6 +99,9 @@ public class Rates
 			mean+= x.getBid();
 		}
 		mean /= rates.size();
+		mean *= 100;
+		mean = Math.round(mean);
+		mean /= 100.0;
 		if ( mean > 0)
 			return mean;
 		else
@@ -110,6 +116,9 @@ public class Rates
 			mean+= x.getAsk();
 		}
 		mean /= rates.size();
+		mean *= 100;
+		mean = Math.round(mean);
+		mean /= 100.0;
 		if ( mean > 0)
 			return mean;
 		else

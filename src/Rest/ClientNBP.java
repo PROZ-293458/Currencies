@@ -4,14 +4,10 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Unmarshaller;
 
 import MandUNM.MarshellerAndUnmarsheller;
-import XMLClasses.Rate;
 import XMLClasses.Rates;
 
-import java.io.StringReader;
 import java.net.URI;
 
 import javax.ws.rs.client.Client;
